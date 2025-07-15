@@ -13,6 +13,8 @@ export class ProductStore {
     products: Product[] = [];
     loading = false;
     error = '';
+    searchQuery = '';
+    isSearching = false;
 
     constructor() {
         makeAutoObservable(this);
@@ -24,7 +26,7 @@ export class ProductStore {
         try {
             // Simulando delay de red
             await new Promise(resolve => setTimeout(resolve, 1000));
-            
+
             // Aquí deberías hacer una llamada a tu API
             // Por ahora, usaremos datos mockeados con URLs válidas
             this.products = [
@@ -68,7 +70,20 @@ export class ProductStore {
             this.loading = false;
         }
     }
+    setSearchQuery(query: string) {
+        this.searchQuery = query;
+        this.isSearching = query.trim().length > 0;
+    }
 
+    get filteredProducts(): Product[] {
+        if (!this.isSearching) return this.products;
+        const q = this.searchQuery.toLowerCase();
+        return this.products.filter(p =>
+            p.name.toLowerCase().includes(q) ||
+            p.description.toLowerCase().includes(q) ||
+            p.category.toLowerCase().includes(q)
+        );
+    }
     getProductById(id: string): Product | undefined {
         return this.products.find(product => product.id === id);
     }

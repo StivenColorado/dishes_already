@@ -2,7 +2,7 @@ import { makeAutoObservable } from 'mobx';
 import { toast } from 'react-hot-toast';
 
 export class CartStore {
-    items: { id: string; name: string; price: number; quantity: number }[] = [];
+    items: { id: string; name: string; price: number; quantity: number; image: string }[] = [];
     total = 0;
 
     constructor() {
@@ -15,7 +15,7 @@ export class CartStore {
             existingItem.quantity++;
             toast.success(`${name} agregado al carrito`);
         } else {
-            this.items.push({ id, name, price, quantity: 1 });
+            this.items.push({ id, name, price, quantity: 1, image: '' });
             toast.success(`${name} agregado al carrito`);
         }
         this.updateTotal();
