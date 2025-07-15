@@ -1,0 +1,26 @@
+{
+  "home": {
+    "welcome": "Welcome to",
+    "brand": "Plates Ecommerce",
+    "subtitle": "Discover our exclusive collection of high-quality plates. Unique designs that will transform your culinary experience.",
+    "catalog_button": "View Catalog",
+    "about_button": "About Us",
+    "stats": {
+      "products": "Products",
+      "clients": "Clients",
+      "support": "Support"
+    },
+    "catalog_title": "Product Catalog",
+    "loading": "Loading products...",
+    "error": "Error:",
+    "add_to_cart": "Add to Cart",
+    "in_cart": "In Cart",
+    "why_us": "Why choose us?",
+    "quality_title": "Premium Quality",
+    "quality_desc": "Highest quality materials carefully selected",
+    "shipping_title": "Free Shipping",
+    "shipping_desc": "Free shipping on orders over $100",
+    "secure_title": "Secure Purchase",
+    "secure_desc": "100% safe and protected transactions"
+  }
+}

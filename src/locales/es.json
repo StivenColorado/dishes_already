@@ -1,0 +1,26 @@
+{
+  "home": {
+    "welcome": "Bienvenido a",
+    "brand": "Ecommerce de Platos",
+    "subtitle": "Descubre nuestra colección exclusiva de platos de alta calidad. Diseños únicos que transformarán tu experiencia culinaria.",
+    "catalog_button": "Ver Catálogo",
+    "about_button": "Sobre Nosotros",
+    "stats": {
+      "products": "Productos",
+      "clients": "Clientes",
+      "support": "Soporte"
+    },
+    "catalog_title": "Catálogo de Productos",
+    "loading": "Cargando productos...",
+    "error": "Error:",
+    "add_to_cart": "Agregar al Carrito",
+    "in_cart": "En Carrito",
+    "why_us": "¿Por qué elegirnos?",
+    "quality_title": "Calidad Premium",
+    "quality_desc": "Materiales de la más alta calidad seleccionados cuidadosamente",
+    "shipping_title": "Envío Gratuito",
+    "shipping_desc": "Envío gratuito en pedidos superiores a $100",
+    "secure_title": "Compra Segura",
+    "secure_desc": "Transacciones 100% seguras y protegidas"
+  }
+}
