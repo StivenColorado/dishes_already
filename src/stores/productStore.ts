@@ -1,4 +1,4 @@
-import { makeAutoObservable, flow, action } from 'mobx';
+import { makeAutoObservable, flow } from 'mobx';
 
 export interface Product {
     id: string;

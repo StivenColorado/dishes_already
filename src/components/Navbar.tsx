@@ -8,7 +8,7 @@ import { observer } from "mobx-react"
 import { Badge } from "./ui/badge"
 
 const Navbar = observer(() => {
-  const { themeStore, cartStore, productStore } = useStores()
+  const { cartStore, productStore } = useStores()
 
   return (
     <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border shadow-sm">

@@ -2,10 +2,9 @@ import { observer } from 'mobx-react-lite';
 import { useParams } from 'react-router-dom';
 import { useStores } from '@/stores/storeContext';
 import { useEffect, useState } from 'react';
-import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
-import { ChevronLeft, Check } from 'lucide-react'; 
+import { ChevronLeft } from 'lucide-react'; 
 import { formatPrice } from '@/utils/formatPrice';
 import { useTranslation } from "react-i18next";
 

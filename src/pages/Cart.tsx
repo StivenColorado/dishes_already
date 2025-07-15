@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { CartStore } from "@/stores/cartStore"
 import { observer } from "mobx-react"
 import { useStores } from "@/stores/storeContext"
 import Navbar from "@/components/Navbar"

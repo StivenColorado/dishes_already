@@ -3,7 +3,6 @@ import { observer } from "mobx-react-lite";
 import Navbar from "@/components/Navbar";
 import { Button } from "../components/ui/button";
 import Carousel from "@/components/Carousel";
-import Catalog from "./Catalog";
 import { useStores } from "@/stores/storeContext";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
