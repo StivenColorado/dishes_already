@@ -8,7 +8,7 @@ import { useStores } from "@/stores/storeContext";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-
+import { ShoppingBag, Check } from "lucide-react";
 const Home = observer(() => {
   const { t } = useTranslation();
   const { productStore, cartStore } = useStores();
@@ -113,17 +113,14 @@ const Home = observer(() => {
                       <span className="text-xl font-bold">${product.price}</span>
                       <Button
                         variant="default"
-                        onClick={() =>
-                          cartStore.addItem(
-                            product.id,
-                            product.name,
-                            product.price
-                          )
-                        }
+                        className="bg-green-300 dark:bg-green-500 dark:hover:bg-green-600 hover:bg-green-400"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          cartStore.addItem(product.id, product.name, product.price);
+                        }}
                       >
                         {cartStore.items.some((item) => item.id === product.id)
-                          ? t("home.in_cart")
-                          : t("home.add_to_cart")}
+                          ? (<Check />) : (<ShoppingBag />)}
                       </Button>
                     </div>
                   </Card>

@@ -22,5 +22,18 @@
     "shipping_desc": "Envío gratuito en pedidos superiores a $100",
     "secure_title": "Compra Segura",
     "secure_desc": "Transacciones 100% seguras y protegidas"
+  },
+  "productDetails":{
+    "title": "Detalles del Producto",
+    "description": "Descripción",
+    "features": "Características",
+    "add_to_cart": "Agregar al Carrito",
+    "in_cart": "En Carrito",
+    "reviews": "Reseñas",
+    "related_products": "Productos Relacionados",
+    "no_use": "No se especificó uso",
+    "error": "Error al cargar los detalles del producto",
+    "loading": "Cargando detalles del producto...",
+    "characteristics": "Características del Producto"
   }
 }

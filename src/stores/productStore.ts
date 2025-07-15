@@ -1,4 +1,4 @@
-import { makeAutoObservable, flow } from 'mobx';
+import { makeAutoObservable, flow, action } from 'mobx';
 
 export interface Product {
     id: string;
@@ -7,6 +7,10 @@ export interface Product {
     description: string;
     image: string;
     category: string;
+    size: string;
+    color:string;
+    warranty: string;
+    use?: string; // Assuming 'use' is a typo and should be 'use'
 }
 
 export class ProductStore {
@@ -37,7 +41,10 @@ export class ProductStore {
                         price: 15000,
                         description: 'Plato de cerámica artesanal con acabado mate',
                         image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop',
-                        category: 'cerámica'
+                        category: 'cerámica',
+                        size: '25cm',
+                        color: 'Blanco',
+                        warranty: '1 año',
                     },
                     {
                         id: '2',
@@ -45,7 +52,10 @@ export class ProductStore {
                         price: 20000,
                         description: 'Plato de porcelana fina con diseño elegante',
                         image: 'https://images.unsplash.com/photo-1565623833408-d77e39b88af6?w=400&h=300&fit=crop',
-                        category: 'porcelana'
+                        category: 'porcelana',
+                        size: '25cm',
+                        color: 'Negro',
+                        warranty: '1 año',
                     },
                     {
                         id: '3',
@@ -53,7 +63,10 @@ export class ProductStore {
                         price: 18000,
                         description: 'Plato hondo moderno con acabado negro brillante',
                         image: 'https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=400&h=300&fit=crop',
-                        category: 'cerámica'
+                        category: 'cerámica',
+                        size: '25cm',
+                        color: 'Negro',
+                        warranty: '1 año'
                     },
                     {
                         id: '4',
@@ -61,7 +74,10 @@ export class ProductStore {
                         price: 25000,
                         description: 'Plato decorativo artesanal con patrones únicos',
                         image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&h=300&fit=crop',
-                        category: 'decorativo'
+                        category: 'decorativo',
+                        size: '25cm',
+                        color: 'Negro',
+                        warranty: '1'
                     }
                 ];
             } catch (err) {
@@ -88,6 +104,7 @@ export class ProductStore {
         );
     }
     getProductById(id: string): Product | undefined {
+        this.searchQuery = '';
         return this.products.find(product => product.id === id);
     }
 
