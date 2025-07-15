@@ -29,7 +29,7 @@ const Navbar = observer(() => {
               placeholder="Buscar productos..."
               value={productStore.searchQuery}
               onChange={e => productStore.setSearchQuery(e.target.value)}
-              className="w-full max-w-md mx-auto block border rounded px-3 py-1
+              className="text-black dark:text-white w-full max-w-md mx-auto block border rounded px-3 py-1
                          text-sm placeholder-muted-foreground
                          focus:outline-none focus:ring-2 focus:ring-primary"
             />
@@ -82,10 +82,9 @@ const Navbar = observer(() => {
                     className="w-full border rounded px-3 py-2 text-sm"
                   />
                 </div>
+                {/* Solo muestra ThemeSwitcher, elimina el botón duplicado */}
                 <div className="flex justify-end mb-4">
-                  <Button variant="ghost" size="icon" onClick={() => themeStore.toggleTheme()}>
-                    {themeStore.theme === "light" ? "🌙" : "☀️"}
-                  </Button>
+                  <ThemeSwitcher />
                 </div>
                 <div className="flex flex-col gap-4">
                   <Link to="/"><Button variant="ghost" className="justify-start w-full gap-2"><Home className="h-4 w-4" />Inicio</Button></Link>
@@ -93,7 +92,7 @@ const Navbar = observer(() => {
                   <Link to="/cart"><Button variant="ghost" className="justify-start w-full gap-2"><ShoppingBag className="h-4 w-4" />Carrito</Button></Link>
                   <Link to="/contact"><Button variant="ghost" className="justify-start w-full gap-2"><Phone className="h-4 w-4" />Contacto</Button></Link>
                   <Link to="/profile"><Button variant="ghost" className="justify-start w-full gap-2"><User className="h-4 w-4" />Perfil</Button></Link>
-                  <ThemeSwitcher />
+                  {/* Elimina ThemeSwitcher aquí para evitar duplicado */}
                 </div>
               </SheetContent>
             </Sheet>

@@ -175,7 +175,7 @@ const Carousel = observer(() => {
       {/* Carousel Container */}
       <div
         ref={carouselRef}
-        className="relative w-full h-full overflow-hidden cursor-grab active:cursor-grabbing"
+        className="relative w-full h-full overflow-hidden cursor-grab active:cursor-grabbing py-8 md:py-0"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
@@ -252,16 +252,17 @@ const Carousel = observer(() => {
       </button>
 
       {/* Dots Indicator */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="absolute  bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {products.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+            className={`w-3 h-3 rounded-full border-2 border-primary transition-all duration-300 focus:outline-none ${
               index === currentIndex
-                ? 'bg-primary w-6'
-                : 'bg-muted-foreground/50 hover:bg-muted-foreground/80'
+                ? 'bg-primary border border-amber-100'
+                : 'bg-background hover:bg-primary/30'
             }`}
+            style={{ minWidth: '12px', minHeight: '12px' }}
           />
         ))}
       </div>
