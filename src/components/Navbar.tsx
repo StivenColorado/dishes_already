@@ -17,7 +17,7 @@ const Navbar = observer(() => {
 
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
-            <h1 className="text-xl font-bold text-foreground">
+            <h1 className="text-xs md:text-xl font-bold text-foreground">
               <span className="text-primary">Platos</span>Ya
             </h1>
           </Link>
