@@ -1,6 +1,6 @@
 import { Button } from "./ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "./ui/sheet"
-import { Menu, Home, ShoppingBag, User, Phone, Grid, X, History, Bell, HelpCircle, Settings, LogOut } from "lucide-react"
+import { Menu, Home, ShoppingBag, User, Phone, Grid, History, Bell, HelpCircle, Settings, LogOut } from "lucide-react"
 import { Link } from "react-router-dom"
 import ThemeSwitcher from "./ui/ThemeSwitcher"
 import { useStores } from "../stores/storeContext"

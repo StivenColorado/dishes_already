@@ -2,7 +2,6 @@ import { useEffect } from "react"
 import { observer } from "mobx-react"
 import { useStores } from "@/stores/storeContext"
 import { Link } from 'react-router-dom'
-import { formatPrice } from '@/utils/formatPrice'
 import Navbar from "@/components/Navbar"
 import { Card } from '@/components/ui/card'
 import { ShoppingBag, Check } from 'lucide-react';
