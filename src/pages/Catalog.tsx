@@ -34,19 +34,18 @@ const Catalog = observer(() => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {products.map((product) => (
               <Link to={`/product/${product.id}`} key={product.id}>
-                <Card className="p-2 hover:shadow-lg transition-shadow">
-                  <div className="aspect-square w-full bg-gray-100 rounded-lg overflow-hidden mb-2" style={{ maxHeight: 160 }}>
+                <Card className="p-8">
+                  <div className="aspect-square w-full rounded-lg overflow-hidden mb-4">
                     <img
                       src={product.image}
                       alt={product.name}
                       className="w-full h-full object-cover"
-                      style={{ maxHeight: 160 }}
                     />
                   </div>
-                  <h2 className="text-lg font-semibold mb-1">{product.name}</h2>
-                  <p className="text-gray-600 mb-2 line-clamp-2">{product.description}</p>
+                  <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
+                  <p className="text-gray-600 mb-4">{product.description}</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-lg font-bold text-primary">{formatPrice(product.price)}</span>
+                    <span className="text-xl font-bold">${product.price}</span>
                     <Button
                       variant="default"
                       className="bg-green-300 dark:bg-green-500 dark:hover:bg-green-600 hover:bg-green-400"
@@ -55,7 +54,8 @@ const Catalog = observer(() => {
                         cartStore.addItem(product.id, product.name, product.price);
                       }}
                     >
-                      {cartStore.items.some(item => item.id === product.id) ? (<Check />) : ( <ShoppingBag />)}
+                      {cartStore.items.some((item) => item.id === product.id)
+                        ? (<Check />) : (<ShoppingBag />)}
                     </Button>
                   </div>
                 </Card>

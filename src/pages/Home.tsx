@@ -8,6 +8,7 @@ import { Card } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { ShoppingBag, Check } from "lucide-react";
+import Footer from "@/components/Footer";
 const Home = observer(() => {
   const { t } = useTranslation();
   const { productStore, cartStore } = useStores();
@@ -98,8 +99,8 @@ const Home = observer(() => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredProducts.map((product) => (
                 <Link to={`/product/${product.id}`} key={product.id}>
-                  <Card className="p-4">
-                    <div className="aspect-square w-full bg-gray-100 rounded-lg overflow-hidden mb-4">
+                  <Card className="p-8">
+                    <div className="aspect-square w-full rounded-lg overflow-hidden mb-4">
                       <img
                         src={product.image}
                         alt={product.name}
@@ -164,6 +165,7 @@ const Home = observer(() => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 });
