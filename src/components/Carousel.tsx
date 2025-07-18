@@ -8,6 +8,7 @@ const Carousel = observer(() => {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
+  const [startY, setStartY] = useState(0);
   const [translateX, setTranslateX] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
 
@@ -110,6 +111,7 @@ const Carousel = observer(() => {
   const handleTouchStart = (e: React.TouchEvent) => {
     setIsDragging(true);
     setStartX(e.touches[0].clientX);
+    setStartY(e.touches[0].clientY);
     setIsAutoPlaying(false);
   };
 
@@ -117,8 +119,21 @@ const Carousel = observer(() => {
     if (!isDragging) return;
     
     const currentX = e.touches[0].clientX;
+    const currentY = e.touches[0].clientY;
     const diffX = startX - currentX;
-    setTranslateX(-diffX);
+    const diffY = Math.abs(currentY - startY);
+    const diffXAbs = Math.abs(diffX);
+    
+    // Prevenir scroll vertical solo si el movimiento es más horizontal que vertical
+    // y si el movimiento horizontal es significativo
+    if (diffXAbs > diffY && diffXAbs > 10) {
+      e.preventDefault();
+    }
+    
+    // Solo actualizar translateX si el movimiento es principalmente horizontal
+    if (diffXAbs > diffY) {
+      setTranslateX(-diffX);
+    }
   };
 
   const handleTouchEnd = () => {
@@ -182,6 +197,10 @@ const Carousel = observer(() => {
       <div
         ref={carouselRef}
         className="relative w-full h-full overflow-hidden cursor-grab active:cursor-grabbing py-8 md:py-0"
+        style={{ 
+          touchAction: 'pan-y pinch-zoom',
+          WebkitOverflowScrolling: 'touch'
+        }}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
