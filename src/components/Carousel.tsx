@@ -127,7 +127,10 @@ const Carousel = observer(() => {
     setIsDragging(false);
     
     if (Math.abs(translateX) > 50) {
-      if (translateX > 0) {
+      // FIX: La lógica estaba invertida
+      // Si translateX es negativo, significa que deslizamos hacia la derecha (next)
+      // Si translateX es positivo, significa que deslizamos hacia la izquierda (prev)
+      if (translateX < 0) {
         nextSlide();
       } else {
         prevSlide();
@@ -159,7 +162,10 @@ const Carousel = observer(() => {
     setIsDragging(false);
     
     if (Math.abs(translateX) > 50) {
-      if (translateX > 0) {
+      // FIX: La lógica estaba invertida aquí también
+      // Si translateX es negativo, significa que deslizamos hacia la derecha (next)
+      // Si translateX es positivo, significa que deslizamos hacia la izquierda (prev)
+      if (translateX < 0) {
         nextSlide();
       } else {
         prevSlide();
